@@ -6,7 +6,7 @@ Release:	1
 License:	GPL
 Group:		Base
 Source0:	http://ep09.pld-linux.org/~havner/%{name}-%{version}.tar.bz2
-# Source0-md5:	9087e8c5d897bddd3aa540446f299aee
+# Source0-md5:	f0bc5023d278c3c39dcdbca9e9539c78
 Source1:	http://developer.linuxtag.net/knoppix/sources/ddcxinfo-knoppix_0.6-5.tar.gz
 # Source1-md5:	a397ca0ab56e83dd0fdeb4d0a84b8c9e
 PreReq:		rc-scripts
