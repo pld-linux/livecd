@@ -75,7 +75,7 @@ cd ddcxinfo-knoppix-0.6
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_initrddir},%{_sbindir},/etc/sysconfig} \
-		$RPM_BUILD_ROOT{%{_desktopdir},%{_sbindir},%{_bindir}}
+		$RPM_BUILD_ROOT{%{_desktopdir},%{_sbindir}}
 
 install livecd $RPM_BUILD_ROOT%{_initrddir}
 install functions-live $RPM_BUILD_ROOT%{_initrddir}
@@ -84,8 +84,8 @@ install installer/installer.sh $RPM_BUILD_ROOT%{_sbindir}/livecd-installer.sh
 install installer/livecd-installer.desktop $RPM_BUILD_ROOT%{_desktopdir}
 install livecd.sysconfig $RPM_BUILD_ROOT/etc/sysconfig/livecd
 
-install livecd-detect $RPM_BUILD_ROOT%{_bindir}
-install ddcxinfo-knoppix-0.6/ddcxinfo $RPM_BUILD_ROOT%{_bindir}/livecd-ddcxinfo
+install livecd-detect $RPM_BUILD_ROOT%{_sbindir}
+install ddcxinfo-knoppix-0.6/ddcxinfo $RPM_BUILD_ROOT%{_sbindir}/livecd-ddcxinfo
 
 install remaster/livecd_gen_iso $RPM_BUILD_ROOT%{_sbindir}/livecd-gen-iso.sh
 install remaster/livecd_remaster_prep $RPM_BUILD_ROOT%{_sbindir}/livecd-remaster-prep.sh
@@ -116,7 +116,8 @@ fi
 
 %files detect
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_sbindir}/livecd-detect
+%attr(755,root,root) %{_sbindir}/livecd-ddcxinfo
 
 %files remaster
 %defattr(644,root,root,755)
