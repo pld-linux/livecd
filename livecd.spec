@@ -31,12 +31,15 @@ Skrypty dla PLD LiveCD
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_initrddir},%{_sbindir},/etc/sysconfig}
+install -d $RPM_BUILD_ROOT{%{_initrddir},%{_sbindir},/etc/sysconfig} \
+		$RPM_BUILD_ROOT%{_desktopdir}
 
 install livecd $RPM_BUILD_ROOT%{_initrddir}
 install functions-live $RPM_BUILD_ROOT%{_initrddir}
 install rc.live $RPM_BUILD_ROOT/etc/rc.d
 install installer/installer.sh $RPM_BUILD_ROOT%{_sbindir}/livecd-installer.sh
+install installer/livecd-installer.desktop \
+		$RPM_BUILD_ROOT%{_desktopdir}
 install livecd.sysconfig $RPM_BUILD_ROOT/etc/sysconfig/livecd
 
 %clean
@@ -56,4 +59,5 @@ fi
 %{_initrddir}/functions-live
 %attr(755,root,root) /etc/rc.d/rc.live
 %attr(755,root,root) %{_sbindir}/*
+%{_desktopdir}/*
 /etc/sysconfig/livecd
