@@ -6,7 +6,7 @@ Release:	1
 License:	GPL
 Group:		Base
 Source0:	http://ep09.pld-linux.org/~havner/%{name}-%{version}.tar.bz2
-# Source0-md5:	f0bc5023d278c3c39dcdbca9e9539c78
+# Source0-md5:	9087e8c5d897bddd3aa540446f299aee
 Source1:	http://developer.linuxtag.net/knoppix/sources/ddcxinfo-knoppix_0.6-5.tar.gz
 # Source1-md5:	a397ca0ab56e83dd0fdeb4d0a84b8c9e
 PreReq:		rc-scripts
@@ -75,7 +75,7 @@ cd ddcxinfo-knoppix-0.6
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_initrddir},%{_sbindir},/etc/sysconfig} \
-		$RPM_BUILD_ROOT%{{_desktopdir},%{_sbindir},%{_bindir}}
+		$RPM_BUILD_ROOT{%{_desktopdir},%{_sbindir},%{_bindir}}
 
 install livecd $RPM_BUILD_ROOT%{_initrddir}
 install functions-live $RPM_BUILD_ROOT%{_initrddir}
@@ -106,7 +106,7 @@ fi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_initrddir}/livecd
 %attr(755,root,root) /etc/rc.d/rc.live
-%attr(755,root,root) %{_sbindir}/*
+%attr(755,root,root) %{_sbindir}/livecd-installer.sh
 %{_desktopdir}/*
 /etc/sysconfig/livecd
 
@@ -120,4 +120,6 @@ fi
 
 %files remaster
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_sbindir}/*.sh
+%attr(755,root,root) %{_sbindir}/livecd-gen-iso.sh
+%attr(755,root,root) %{_sbindir}/livecd-remaster-prep.sh
+%attr(755,root,root) %{_sbindir}/livecd-symlinks.sh
