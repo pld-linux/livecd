@@ -12,8 +12,8 @@ Source1:	http://developer.linuxtag.net/knoppix/sources/ddcxinfo-knoppix_0.6-5.ta
 PreReq:		rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 Requires:	dml
-Requires:	${name}-common
-Requires:	${name}-detect
+Requires:	%{name}-common
+Requires:	%{name}-detect
 Obsoletes:	%{name}-installed
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -87,9 +87,9 @@ install livecd.sysconfig $RPM_BUILD_ROOT/etc/sysconfig/livecd
 install livecd-detect $RPM_BUILD_ROOT%{_bindir}
 install ddcxinfo-knoppix-0.6/ddcxinfo $RPM_BUILD_ROOT%{_bindir}/livecd-ddcxinfo
 
-install livecd_gen_iso $RPM_BUILD_ROOT%{_sbindir}/livecd-gen-iso.sh
-install livecd_remaster_prep $RPM_BUILD_ROOT%{_sbindir}/livecd-remaster-prep.sh
-install livecd_symlinks $RPM_BUILD_ROOT%{_sbindir}/livecd-symlinks.sh
+install remaster/livecd_gen_iso $RPM_BUILD_ROOT%{_sbindir}/livecd-gen-iso.sh
+install remaster/livecd_remaster_prep $RPM_BUILD_ROOT%{_sbindir}/livecd-remaster-prep.sh
+install remaster/livecd_symlinks $RPM_BUILD_ROOT%{_sbindir}/livecd-symlinks.sh
 
 %clean
 rm -rf $RPM_BUILD_ROOT
