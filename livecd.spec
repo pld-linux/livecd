@@ -108,7 +108,7 @@ fi
 %attr(755,root,root) %{_initrddir}/livecd
 %attr(754,root,root) /etc/rc.d/rc.live
 %attr(755,root,root) %{_sbindir}/livecd-installer.sh
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 /etc/sysconfig/livecd
 
 %files common
