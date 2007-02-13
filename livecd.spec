@@ -1,5 +1,5 @@
 Summary:	PLD LiveCD scripts
-Summary(pl.UTF-8):   Skrypty PLD LiveCD
+Summary(pl.UTF-8):	Skrypty PLD LiveCD
 Name:		livecd
 Version:	1.0
 Release:	2
@@ -29,7 +29,7 @@ Skrypty dla PLD LiveCD
 
 %package common
 Summary:	Functions for PLD LiveCD scripts
-Summary(pl.UTF-8):   Funkcje dla skryptów PLD LiveCD
+Summary(pl.UTF-8):	Funkcje dla skryptów PLD LiveCD
 Group:		Applications/System
 
 %description common
@@ -40,7 +40,7 @@ Funkcje dla skryptów PLD LiveCD.
 
 %package detect
 Summary:	PCI detection program for PLD LiveCD
-Summary(pl.UTF-8):   Program do wykrywania PCI dla PLD LiveCD
+Summary(pl.UTF-8):	Program do wykrywania PCI dla PLD LiveCD
 Group:		Applications/System
 
 %description detect
@@ -51,7 +51,7 @@ Program do wykrywania PCI dla PLD LiveCD.
 
 %package remaster
 Summary:	PLD LiveCD remastering scripts
-Summary(pl.UTF-8):   Skrypty do remasteringu PLD LiveCD
+Summary(pl.UTF-8):	Skrypty do remasteringu PLD LiveCD
 Group:		Applications/System
 Requires:	busybox
 Requires:	cdrtools-mkisofs
