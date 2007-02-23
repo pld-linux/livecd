@@ -86,7 +86,7 @@ install livecd.sysconfig $RPM_BUILD_ROOT/etc/sysconfig/livecd
 install livecd-detect $RPM_BUILD_ROOT%{_sbindir}
 install ddcxinfo-knoppix-0.6/ddcxinfo $RPM_BUILD_ROOT%{_sbindir}/livecd-ddcxinfo
 
-install remaster/livecd_create $RPM_BUILD_ROOT%{_sbindir}/livecd-chroot.sh
+install remaster/livecd_chroot $RPM_BUILD_ROOT%{_sbindir}/livecd-chroot.sh
 install remaster/livecd_gen_iso $RPM_BUILD_ROOT%{_sbindir}/livecd-gen-iso.sh
 install remaster/livecd_gen_initrd $RPM_BUILD_ROOT%{_sbindir}/livecd-gen-initrd.sh
 install remaster/livecd_remaster_prep $RPM_BUILD_ROOT%{_sbindir}/livecd-remaster-prep.sh
