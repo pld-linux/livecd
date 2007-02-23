@@ -1,17 +1,16 @@
 Summary:	PLD LiveCD scripts
 Summary(pl.UTF-8):	Skrypty PLD LiveCD
 Name:		livecd
-Version:	1.0
-Release:	2
+Version:	1.91
+Release:	1
 License:	GPL
 Group:		Base
 Source0:	http://ep09.pld-linux.org/~havner/%{name}-%{version}.tar.bz2
-# Source0-md5:	80ff61f2fb6ab4bdc337f7de0705ff38
+# Source0-md5:	a2540d355fb900295ba0979e948bfd49
 Source1:	http://developer.linuxtag.net/knoppix/sources/ddcxinfo-knoppix_0.6-5.tar.gz
 # Source1-md5:	a397ca0ab56e83dd0fdeb4d0a84b8c9e
-PreReq:		rc-scripts
+Requires:	rc-scripts
 Requires(post,preun):	/sbin/chkconfig
-Requires:	dml
 Requires:	%{name}-common
 Requires:	%{name}-detect
 Obsoletes:	%{name}-installed
@@ -65,7 +64,7 @@ Scripts for remastering PLD LiveCD.
 Skrypty do remasteringu PLD LiveCD.
 
 %prep
-%setup -q -n %{name} -a 1
+%setup -q -a 1
 
 %build
 %{__cc} %{rpmldflags} %{rpmcflags} detect/detect.c -o livecd-detect
@@ -87,10 +86,10 @@ install livecd.sysconfig $RPM_BUILD_ROOT/etc/sysconfig/livecd
 install livecd-detect $RPM_BUILD_ROOT%{_sbindir}
 install ddcxinfo-knoppix-0.6/ddcxinfo $RPM_BUILD_ROOT%{_sbindir}/livecd-ddcxinfo
 
+install remaster/livecd_create $RPM_BUILD_ROOT%{_sbindir}/livecd-chroot.sh
 install remaster/livecd_gen_iso $RPM_BUILD_ROOT%{_sbindir}/livecd-gen-iso.sh
 install remaster/livecd_gen_initrd $RPM_BUILD_ROOT%{_sbindir}/livecd-gen-initrd.sh
 install remaster/livecd_remaster_prep $RPM_BUILD_ROOT%{_sbindir}/livecd-remaster-prep.sh
-#install remaster/livecd_create $RPM_BUILD_ROOT%{_sbindir}/livecd-create.sh
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -122,7 +121,7 @@ fi
 
 %files remaster
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_sbindir}/livecd-chroot.sh
 %attr(755,root,root) %{_sbindir}/livecd-gen-iso.sh
 %attr(755,root,root) %{_sbindir}/livecd-gen-initrd.sh
 %attr(755,root,root) %{_sbindir}/livecd-remaster-prep.sh
-#attr(755,root,root) %{_sbindir}/livecd-create.sh
