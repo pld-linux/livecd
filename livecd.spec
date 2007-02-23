@@ -74,7 +74,7 @@ cd ddcxinfo-knoppix-0.6
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_initrddir},%{_sbindir},/etc/{sysconfig,live-alt}} \
-		$RPM_BUILD_ROOT{%{_desktopdir},%{_sbindir}}
+		$RPM_BUILD_ROOT{%{_desktopdir},%{_sbindir},/live}
 
 install livecd $RPM_BUILD_ROOT%{_initrddir}
 install functions-live $RPM_BUILD_ROOT%{_initrddir}
@@ -107,6 +107,7 @@ fi
 %attr(755,root,root) %{_initrddir}/livecd
 %dir /etc/live-alt
 %attr(754,root,root) /etc/rc.d/rc.live
+%dir /live
 %attr(755,root,root) %{_sbindir}/livecd-installer.sh
 %{_desktopdir}/*.desktop
 /etc/sysconfig/livecd
